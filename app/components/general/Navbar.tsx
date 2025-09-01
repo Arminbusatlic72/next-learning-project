@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 import { buttonVariants } from "../ui/Button";
-// import {
-//   RegisterLink,
-//   LoginLink,
-//   LogoutLink
-// } from "@kinde-oss/kinde-auth-nextjs/components";
+import {
+  RegisterLink,
+  LoginLink,
+  LogoutLink
+} from "@kinde-oss/kinde-auth-nextjs/components";
 
-// import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 
 export function Navbar() {
-  // const { getUser } = useKindeBrowserClient();
-  // const user = getUser();
+  const { getUser } = useKindeBrowserClient();
+  const user = getUser();
 
   return (
     <nav className="py-5 flex items-center justify-between">
@@ -39,7 +39,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* {user ? (
+      {user ? (
         <div className="flex items-center gap-4">
           <p>{user.given_name}</p>
           <LogoutLink className={buttonVariants({ variant: "secondary" })}>
@@ -53,7 +53,7 @@ export function Navbar() {
             Sign up
           </RegisterLink>
         </div>
-      )} */}
+      )}
     </nav>
   );
 }

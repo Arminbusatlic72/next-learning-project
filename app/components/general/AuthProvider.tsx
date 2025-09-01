@@ -1,6 +1,12 @@
 "use client";
+
+import { ReactNode } from "react";
 import { KindeProvider } from "@kinde-oss/kinde-auth-nextjs";
 
-export const AuthProvider = ({ children }) => {
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
+export const AuthProvider = ({ children }: AuthProviderProps) => {
   return <KindeProvider>{children}</KindeProvider>;
 };
